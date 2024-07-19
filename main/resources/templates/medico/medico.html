@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{plantilla/plantilla}">
+<head>
+    <meta charset="UTF-8">
+    <title>Medico</title>
+</head>
+<body>
+<div layout:fragment="espaciocontenidohtml">
+    <div class="page-header">
+        <h3 class="page-title">Nuevo Medico</h3>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Forms</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Form elements</li>
+            </ol>
+            
+            
+            <form th:action="@{/insertarmedico}" th:object="${nuevo}" role="form" method="post">
+                   
+                    
+                    <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Estado</label>
+                    <input th:field="*{estado}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Usuario</label>
+                    <input th:field="*{usuario}" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  </div>
+                 
+                  
+                  
+                  
+                
+                    <div class="text-center">
+								<button type="submit"
+									class="btn btn-lg bg-gradient-primary btn-lg w-25 mt-4 mb-0">GUARDAR</button>
+							</div>
+					<input type="hidden" th:field="*{idKardex}" >
+                  </form>
+            
+        </nav>
+    </div>
+   
+</div>
+
+
+</body>
+</html>
